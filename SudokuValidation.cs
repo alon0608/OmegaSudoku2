@@ -40,5 +40,16 @@ namespace SudokuOmega7
 
             return result;
         }
+        private bool IsValidGroup(int[] group)
+        {
+            var seen = new HashSet<int>();
+            foreach (var val in group)
+            {
+                if (val == 0) continue;
+                if (seen.Contains(val)) return false;
+                seen.Add(val);
+            }
+            return true;
+        }
     }
 }
