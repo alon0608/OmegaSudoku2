@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace SudokuOmega7
 {
-    internal class Cell
+    public class Cell
     {
+        public int Row { get; }
+        public int Col { get; }
+        public int Value { get; set; }
+        public bool IsReadOnly { get; }
+
+        public Cell(int row, int col, int value, bool isReadOnly)
+        {
+            Row = row;
+            Col = col;
+            Value = value;
+            IsReadOnly = isReadOnly;
+        }
     }
 }
