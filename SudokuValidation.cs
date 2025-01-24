@@ -51,5 +51,17 @@ namespace SudokuOmega7
             }
             return true;
         }
+        public bool IsValid(SudokuBoard board)
+        {
+            int size = board.GetSize();
+            for (int i = 0; i < size; i++)
+            {
+                if (!IsValidGroup(GetRow(board, i)) ||
+                    !IsValidGroup(GetColumn(board, i)) ||
+                    !IsValidGroup(GetBox(board, i)))
+                    return false;
+            }
+            return true;
+        }
     }
 }
