@@ -42,8 +42,20 @@ namespace SudokuOmega7
                     {
                         emptyCells.Add((r, c));
                     }
+                    else
+                    {
+                        int mask = 1 << (val - 1);
+                        rowUsed[r] |= mask;
+                        colUsed[c] |= mask;
+                        boxUsed[GetBoxIndex(r, c)] |= mask;
+                    }
                 }
             }
+        }
+
+        public bool Solve()
+        {
+            return Backtrack(0);
         }
     }
 }
