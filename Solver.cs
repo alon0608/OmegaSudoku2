@@ -58,6 +58,58 @@ namespace SudokuOmega7
             return Backtrack(0);
         }
 
+        private bool Backtrack(int index)
+        {
+            if (index == emptyCells.Count)
+                return true;
+
+
+            int minOptions = 10;
+            int selectedIndex = -1;
+
+            for (int i = index; i < emptyCells.Count; i++)
+            {
+                var (r, c) = emptyCells[i];
+                int options = CountOptions(r, c);
+                if (options < minOptions)
+                {
+                    minOptions = options;
+                    selectedIndex = i;
+                    if (options == 1)
+                        break;
+                }
+            }
+
+            if (selectedIndex == -1)
+                return false;
+
+            Swap(emptyCells, index, selectedIndex);
+            var (row, col) = emptyCells[index];
+            int usedMask = rowUsed[row] | colUsed[col] | boxUsed[GetBoxIndex(row, col)];
+
+            for (int val = 1; val <= 9; val++)
+            {
+                int mask = 1 << (val - 1);
+                if ((usedMask & mask) == 0)
+                {
+                    _board.SetCellValue(row, col, val);
+                    rowUsed[row] |= mask;
+                    colUsed[col] |= mask;
+                    boxUsed[GetBoxIndex(row, col)] |= mask;
+
+                    if (Backtrack(index + 1))
+                        return true;
+
+                    _board.SetCellValue(row, col, 0);
+                    rowUsed[row] &= ~mask;
+                    colUsed[col] &= ~mask;
+                    boxUsed[GetBoxIndex(row, col)] &= ~mask;
+                }
+            }
+
+            return false;
+        }
+
         private int CountOptions(int row, int col)
         {
             int used = rowUsed[row] | colUsed[col] | boxUsed[GetBoxIndex(row, col)];
@@ -68,6 +120,18 @@ namespace SudokuOmega7
                     count++;
             }
             return count;
+        }
+
+        private void Swap(List<(int row, int col)> list, int i, int j)
+        {
+            var temp = list[i];
+            list[i] = list[j];
+            list[j] = temp;
+        }
+
+        private int GetBoxIndex(int row, int col)
+        {
+            return (row / 3) * 3 + (col / 3);
         }
     }
 }
