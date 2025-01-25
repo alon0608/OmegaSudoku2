@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace SudokuOmega7
 {
-    internal interface IInput
+    public interface IInput
     {
+        string GetInput();
     }
 }
