@@ -57,5 +57,17 @@ namespace SudokuOmega7
         {
             return Backtrack(0);
         }
+
+        private int CountOptions(int row, int col)
+        {
+            int used = rowUsed[row] | colUsed[col] | boxUsed[GetBoxIndex(row, col)];
+            int count = 0;
+            for (int val = 1; val <= 9; val++)
+            {
+                if ((used & (1 << (val - 1))) == 0)
+                    count++;
+            }
+            return count;
+        }
     }
 }
