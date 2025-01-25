@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace SudokuOmega7
 {
-    internal interface IBoardSize
+    public interface IBoardSize
     {
+        int GetSize();
+        int GetBoxSize();
     }
 }
