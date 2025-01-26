@@ -45,7 +45,7 @@ namespace SudokuOmega7
             if (c >= ':' && c <= 'Z')
                 return c - '0';
 
-            throw new ArgumentException($"תווים לא חוקיים בקלט: '{c}'.");
+            throw new ArgumentException($"Wrong chars: '{c}'.");
         }
 
         private char ConvertToChar(int value)
