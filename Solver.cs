@@ -9,22 +9,32 @@ namespace SudokuOmega7
     public class SudokuSolver
     {
         private readonly SudokuBoard _board;
+        private readonly int _size;
+        private readonly int _boxSize;
 
-        private int[] rowUsed = new int[9];
-        private int[] colUsed = new int[9];
-        private int[] boxUsed = new int[9];
+        private int[] rowUsed;
+        private int[] colUsed;
+        private int[] boxUsed;
 
-        private List<(int row, int col)> emptyCells = new List<(int row, int col)>();
+        private List<(int row, int col)> emptyCells;
 
         public SudokuSolver(SudokuBoard board)
         {
             _board = board;
+            _size = board.GetSize();
+            _boxSize = board.GetBoxSize();
+
+            rowUsed = new int[_size];
+            colUsed = new int[_size];
+            boxUsed = new int[_size];
+            emptyCells = new List<(int row, int col)>();
+
             Initialize();
         }
 
         private void Initialize()
         {
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i < _size; i++)
             {
                 rowUsed[i] = 0;
                 colUsed[i] = 0;
@@ -33,9 +43,9 @@ namespace SudokuOmega7
 
             emptyCells.Clear();
 
-            for (int r = 0; r < 9; r++)
+            for (int r = 0; r < _size; r++)
             {
-                for (int c = 0; c < 9; c++)
+                for (int c = 0; c < _size; c++)
                 {
                     int val = _board.GetCellValue(r, c);
                     if (val == 0)
@@ -63,8 +73,7 @@ namespace SudokuOmega7
             if (index == emptyCells.Count)
                 return true;
 
-
-            int minOptions = 10;
+            int minOptions = _size + 1;
             int selectedIndex = -1;
 
             for (int i = index; i < emptyCells.Count; i++)
@@ -87,7 +96,7 @@ namespace SudokuOmega7
             var (row, col) = emptyCells[index];
             int usedMask = rowUsed[row] | colUsed[col] | boxUsed[GetBoxIndex(row, col)];
 
-            for (int val = 1; val <= 9; val++)
+            for (int val = 1; val <= _size; val++)
             {
                 int mask = 1 << (val - 1);
                 if ((usedMask & mask) == 0)
@@ -114,7 +123,7 @@ namespace SudokuOmega7
         {
             int used = rowUsed[row] | colUsed[col] | boxUsed[GetBoxIndex(row, col)];
             int count = 0;
-            for (int val = 1; val <= 9; val++)
+            for (int val = 1; val <= _size; val++)
             {
                 if ((used & (1 << (val - 1))) == 0)
                     count++;
@@ -131,7 +140,8 @@ namespace SudokuOmega7
 
         private int GetBoxIndex(int row, int col)
         {
-            return (row / 3) * 3 + (col / 3);
+            return (row / _boxSize) * _boxSize + (col / _boxSize);
         }
     }
 }
+
