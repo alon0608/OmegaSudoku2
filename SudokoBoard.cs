@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace SudokuOmega7
 {
     public class SudokuBoard : IBoardSize
@@ -18,7 +20,7 @@ namespace SudokuOmega7
             _boxSize = (int)Math.Sqrt(_size);
 
             if (_size * _size != input.Length)
-                throw new ArgumentException("Invalid input length for Sudoku board.");
+                throw new ArgumentException("Wrong input length");
 
             _board = new int[_size, _size];
             InitializeBoard(input);
@@ -40,10 +42,15 @@ namespace SudokuOmega7
         {
             if (char.IsDigit(c))
                 return c - '0';
-            if (char.IsLetter(c) && char.ToUpper(c) <= 'G')
-                return char.ToUpper(c) - 'A' + 10;
+            if (c >= ':' && c <= 'Z')
+                return c - '0';
 
-            throw new ArgumentException($"Invalid character '{c}' in Sudoku input.");
+            throw new ArgumentException($"Wrong chars: '{c}'.");
+        }
+
+        private char ConvertToChar(int value)
+        {
+            return (char)('0' + value);
         }
 
         public int GetSize()
@@ -81,12 +88,6 @@ namespace SudokuOmega7
                     Console.WriteLine(new string('-', _size * 2));
             }
         }
-
-        private char ConvertToChar(int value)
-        {
-            if (value <= 9)
-                return (char)(value + '0');
-            return (char)((value - 10) + 'A');
-        }
     }
 }
+
