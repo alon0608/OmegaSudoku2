@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace SudokuOmega7
 {
-    internal interface IValidation
+    public interface IValidation
     {
-
+        bool IsValid(SudokuBoard board);
     }
 }
