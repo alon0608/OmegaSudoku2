@@ -8,5 +8,6 @@ namespace SudokuOmega7
 {
     internal interface IValidation
     {
+
     }
 }

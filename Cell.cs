@@ -20,5 +20,6 @@ namespace SudokuOmega7
             Value = value;
             IsReadOnly = isReadOnly;
         }
+
     }
 }
