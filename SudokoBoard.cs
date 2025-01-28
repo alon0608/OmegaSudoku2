@@ -45,7 +45,7 @@ namespace SudokuOmega7
             if (c >= ':' && c <= 'Z')
                 return c - '0';
 
-            throw new ArgumentException($"Wrong chars: '{c}'.");
+            throw new ArgumentException($"Wrong character: '{c}'.");
         }
 
         private char ConvertToChar(int value)
@@ -86,6 +86,46 @@ namespace SudokuOmega7
                 Console.WriteLine();
                 if ((i + 1) % _boxSize == 0 && i + 1 != _size)
                     Console.WriteLine(new string('-', _size * 2));
+            }
+        }
+
+        public SudokuBoard Clone()
+        {
+            SudokuBoard clone = new SudokuBoard(new string('0', _size * _size));
+
+            for (int i = 0; i < _size; i++)
+            {
+                for (int j = 0; j < _size; j++)
+                {
+                    clone.SetCellValue(i, j, _board[i, j]);
+                }
+            }
+
+            return clone;
+        }
+
+        public void CopyFrom(SudokuBoard other)
+        {
+            if (other.GetSize() != this._size)
+                throw new ArgumentException("Board sizes do not match.");
+
+            for (int i = 0; i < _size; i++)
+            {
+                for (int j = 0; j < _size; j++)
+                {
+                    this._board[i, j] = other.GetCellValue(i, j);
+                }
+            }
+        }
+
+        public void ResetBoard()
+        {
+            for (int i = 0; i < _size; i++)
+            {
+                for (int j = 0; j < _size; j++)
+                {
+                    _board[i, j] = 0;
+                }
             }
         }
     }
