@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SudokuOmega7;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,17 +7,15 @@ using System.Threading.Tasks;
 
 
 
-namespace SudokuOmega7
+namespace ConsoleApp5
 {
     public class SudokuGame
     {
         private readonly SudokuBoard _board;
         private readonly SudokuSolver _solver;
-        private readonly IValidation _validator;
 
-        public SudokuGame(IInput inputSource, IValidation validator)
+        public SudokuGame(IInput inputSource)
         {
-            _validator = validator;
             string input = inputSource.GetInput();
             _board = new SudokuBoard(input);
             _solver = new SudokuSolver(_board);
@@ -27,7 +26,7 @@ namespace SudokuOmega7
             Console.WriteLine("first board:");
             _board.PrintBoard();
 
-            if (!_validator.IsValid(_board))
+            if (!SudokuValidation.IsValid(_board))
             {
                 Console.WriteLine("invalid board.");
                 return;
