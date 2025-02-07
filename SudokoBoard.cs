@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SudokuOmega7;
+using System;
 
-
-
-namespace SudokuOmega7
+namespace ConsoleApp5
 {
     public class SudokuBoard : IBoardSize
     {
@@ -107,7 +102,7 @@ namespace SudokuOmega7
         public void CopyFrom(SudokuBoard other)
         {
             if (other.GetSize() != this._size)
-                throw new ArgumentException("Board sizes do not match");
+                throw new ArgumentException("Board sizes do not match.");
 
             for (int i = 0; i < _size; i++)
             {
@@ -130,4 +125,3 @@ namespace SudokuOmega7
         }
     }
 }
-
