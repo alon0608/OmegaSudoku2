@@ -107,7 +107,7 @@ namespace SudokuOmega7
         public void CopyFrom(SudokuBoard other)
         {
             if (other.GetSize() != this._size)
-                throw new ArgumentException("Board sizes do not match.");
+                throw new ArgumentException("Board sizes do not match");
 
             for (int i = 0; i < _size; i++)
             {
