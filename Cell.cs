@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SudokuOmega7
+
+namespace ConsoleApp5
 {
     public class Cell
     {
@@ -21,5 +22,15 @@ namespace SudokuOmega7
             IsReadOnly = isReadOnly;
         }
 
+        public char GetCharValue()
+        {
+            return Value == 0 ? '.' : ConvertToChar(Value);
+        }
+
+        private char ConvertToChar(int value)
+        {
+            return (char)('0' + value);
+        }
     }
 }
+
