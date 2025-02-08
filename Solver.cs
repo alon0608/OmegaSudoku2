@@ -11,53 +11,34 @@ namespace SudokuOmega7
         private readonly SudokuBoard _board;
         private readonly int _size;
         private readonly int _boxSize;
-
         private int[] rowUsed;
         private int[] colUsed;
         private int[] boxUsed;
-
-        private List<(int row, int col)> emptyCells;
 
         public SudokuSolver(SudokuBoard board)
         {
             _board = board;
             _size = board.GetSize();
             _boxSize = board.GetBoxSize();
-
             rowUsed = new int[_size];
             colUsed = new int[_size];
             boxUsed = new int[_size];
-            emptyCells = new List<(int row, int col)>();
-
             Initialize();
         }
 
         private void Initialize()
         {
-            for (int i = 0; i < _size; i++)
-            {
-                rowUsed[i] = 0;
-                colUsed[i] = 0;
-                boxUsed[i] = 0;
-            }
-
-            emptyCells.Clear();
-
             for (int r = 0; r < _size; r++)
             {
                 for (int c = 0; c < _size; c++)
                 {
                     int val = _board.GetCellValue(r, c);
-                    if (val == 0)
-                    {
-                        emptyCells.Add((r, c));
-                    }
-                    else
+                    if (val != 0)
                     {
                         int mask = 1 << (val - 1);
                         rowUsed[r] |= mask;
                         colUsed[c] |= mask;
-                        boxUsed[GetBoxIndex(r, c)] |= mask;
+                        boxUsed[SolutionHandler.GetBoxIndex(r, c, _boxSize)] |= mask;
                     }
                 }
             }
@@ -65,82 +46,116 @@ namespace SudokuOmega7
 
         public bool Solve()
         {
-            return Backtrack(0);
+            return Backtrack();
         }
 
-        private bool Backtrack(int index)
+        private bool Backtrack()
         {
-            if (index == emptyCells.Count)
+            while (ApplyHeuristics()) ;
+            if (SolutionHandler.IsSolved(_board))
                 return true;
-
-            int minOptions = _size + 1;
-            int selectedIndex = -1;
-
-            for (int i = index; i < emptyCells.Count; i++)
-            {
-                var (r, c) = emptyCells[i];
-                int options = CountOptions(r, c);
-                if (options < minOptions)
-                {
-                    minOptions = options;
-                    selectedIndex = i;
-                    if (options == 1)
-                        break;
-                }
-            }
-
-            if (selectedIndex == -1)
+            var (selectedRow, selectedCol) = SelectNextCell();
+            if (selectedRow == -1 && selectedCol == -1)
                 return false;
-
-            Swap(emptyCells, index, selectedIndex);
-            var (row, col) = emptyCells[index];
-            int usedMask = rowUsed[row] | colUsed[col] | boxUsed[GetBoxIndex(row, col)];
-
+            int boxIndexSelected = SolutionHandler.GetBoxIndex(selectedRow, selectedCol, _boxSize);
+            int optionsMaskSelected = ~(rowUsed[selectedRow] | colUsed[selectedCol] | boxUsed[boxIndexSelected]) & ((1 << _size) - 1);
             for (int val = 1; val <= _size; val++)
             {
                 int mask = 1 << (val - 1);
-                if ((usedMask & mask) == 0)
+                if ((optionsMaskSelected & mask) != 0)
                 {
-                    _board.SetCellValue(row, col, val);
-                    rowUsed[row] |= mask;
-                    colUsed[col] |= mask;
-                    boxUsed[GetBoxIndex(row, col)] |= mask;
-
-                    if (Backtrack(index + 1))
+                    SudokuBoard clonedBoard = _board.Clone();
+                    int[] clonedRowUsed = (int[])rowUsed.Clone();
+                    int[] clonedColUsed = (int[])colUsed.Clone();
+                    int[] clonedBoxUsed = (int[])boxUsed.Clone();
+                    SolutionHandler.AssignValue(_board, rowUsed, colUsed, boxUsed, selectedRow, selectedCol, val, _boxSize);
+                    bool result = Backtrack();
+                    if (result)
                         return true;
-
-                    _board.SetCellValue(row, col, 0);
-                    rowUsed[row] &= ~mask;
-                    colUsed[col] &= ~mask;
-                    boxUsed[GetBoxIndex(row, col)] &= ~mask;
+                    SolutionHandler.RestoreState(_board, clonedBoard, rowUsed, clonedRowUsed, colUsed, clonedColUsed, boxUsed, clonedBoxUsed);
                 }
             }
-
             return false;
         }
 
-        private int CountOptions(int row, int col)
+        private bool ApplyHeuristics()
         {
-            int used = rowUsed[row] | colUsed[col] | boxUsed[GetBoxIndex(row, col)];
-            int count = 0;
-            for (int val = 1; val <= _size; val++)
+            bool progress = false;
+            progress |= NakedSinglesSolver.ApplyNakedSingles(_board, rowUsed, colUsed, boxUsed, _size, _boxSize);
+            if (_size >= 16)
+                progress |= HiddenSinglesSolver.ApplyHiddenSingles(_board, rowUsed, colUsed, boxUsed, _size, _boxSize);
+            return progress;
+        }
+
+        private (int row, int col) SelectNextCell()
+        {
+            int minOptions = _size + 1;
+            int selectedRow = -1;
+            int selectedCol = -1;
+            int highestDegree = -1;
+            bool foundSingleOption = false;
+            for (int r = 0; r < _size && !foundSingleOption; r++)
             {
-                if ((used & (1 << (val - 1))) == 0)
-                    count++;
+                for (int c = 0; c < _size && !foundSingleOption; c++)
+                {
+                    if (_board.GetCellValue(r, c) != 0)
+                        continue;
+                    int usedMask = rowUsed[r] | colUsed[c] | boxUsed[SolutionHandler.GetBoxIndex(r, c, _boxSize)];
+                    int options = ~usedMask & ((1 << _size) - 1);
+                    int optionCount = SolutionHandler.PopCount(options);
+                    if (optionCount < minOptions)
+                    {
+                        minOptions = optionCount;
+                        selectedRow = r;
+                        selectedCol = c;
+                        highestDegree = CalculateDegree(r, c);
+                        if (optionCount == 1)
+                            foundSingleOption = true;
+                    }
+                    else if (optionCount == minOptions)
+                    {
+                        int degree = CalculateDegree(r, c);
+                        if (degree > highestDegree)
+                        {
+                            selectedRow = r;
+                            selectedCol = c;
+                            highestDegree = degree;
+                            if (optionCount == 1)
+                                foundSingleOption = true;
+                        }
+                    }
+                }
             }
-            return count;
+            return (selectedRow, selectedCol);
         }
 
-        private void Swap(List<(int row, int col)> list, int i, int j)
+        private int CalculateDegree(int row, int col)
         {
-            var temp = list[i];
-            list[i] = list[j];
-            list[j] = temp;
-        }
-
-        private int GetBoxIndex(int row, int col)
-        {
-            return (row / _boxSize) * _boxSize + (col / _boxSize);
+            int degree = 0;
+            for (int c = 0; c < _size; c++)
+            {
+                if (c != col && _board.GetCellValue(row, c) == 0)
+                    degree++;
+            }
+            for (int r = 0; r < _size; r++)
+            {
+                if (r != row && _board.GetCellValue(r, col) == 0)
+                    degree++;
+            }
+            int boxIndex = SolutionHandler.GetBoxIndex(row, col, _boxSize);
+            int startRowBox = (boxIndex / _boxSize) * _boxSize;
+            int startColBox = (boxIndex % _boxSize) * _boxSize;
+            for (int rr = 0; rr < _boxSize; rr++)
+            {
+                for (int cc = 0; cc < _boxSize; cc++)
+                {
+                    int currentRow = startRowBox + rr;
+                    int currentCol = startColBox + cc;
+                    if ((currentRow != row || currentCol != col) && _board.GetCellValue(currentRow, currentCol) == 0)
+                        degree++;
+                }
+            }
+            return degree;
         }
     }
 }
