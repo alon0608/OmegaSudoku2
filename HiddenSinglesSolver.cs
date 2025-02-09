@@ -45,7 +45,7 @@ namespace SudokuOmega7
                 {
                     if (board.GetCellValue(r, c) != 0)
                         continue;
-                    int usedMask = rowUsed[r] | colUsed[c] | boxUsed[SolutionHandler.GetBoxIndex(r, c, boxSize)];
+                    int usedMask = rowUsed[r] | colUsed[c] | boxUsed[BoardStateManager.GetBoxIndex(r, c, boxSize)];
                     int options = ~usedMask & ((1 << size) - 1);
                     for (int val = 1; val <= size; val++)
                     {
@@ -64,7 +64,7 @@ namespace SudokuOmega7
                         var (r, c) = possibleCells[0];
                         if (board.GetCellValue(r, c) == 0)
                         {
-                            SolutionHandler.AssignValue(board, rowUsed, colUsed, boxUsed, r, c, val, boxSize);
+                            BoardStateManager.PlaceNumber(board, rowUsed, colUsed, boxUsed, r, c, val, boxSize);
                             progress = true;
                         }
                     }

@@ -23,12 +23,12 @@ namespace SudokuOmega7
                 {
                     if (board.GetCellValue(r, c) != 0)
                         continue;
-                    int usedMask = rowUsed[r] | colUsed[c] | boxUsed[SolutionHandler.GetBoxIndex(r, c, boxSize)];
+                    int usedMask = rowUsed[r] | colUsed[c] | boxUsed[BoardStateManager.GetBoxIndex(r, c, boxSize)];
                     int options = ~usedMask & ((1 << size) - 1);
-                    if (SolutionHandler.PopCount(options) == 1)
+                    if (BoardStateManager.PopCount(options) == 1)
                     {
-                        int val = SolutionHandler.Log2(options) + 1;
-                        SolutionHandler.AssignValue(board, rowUsed, colUsed, boxUsed, r, c, val, boxSize);
+                        int val = BoardStateManager.Log2(options) + 1;
+                        BoardStateManager.PlaceNumber(board, rowUsed, colUsed, boxUsed, r, c, val, boxSize);
                         progress = true;
                     }
                 }
@@ -37,3 +37,4 @@ namespace SudokuOmega7
         }
     }
 }
+

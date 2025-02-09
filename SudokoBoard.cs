@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SudokuOmega7
 {
-    public class SudokuBoard : IBoardSize
+    public class SudokuBoard 
     {
         private readonly int[,] _board;
         private readonly int _size;

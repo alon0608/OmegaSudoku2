@@ -1,4 +1,4 @@
-﻿using SudokuOmega7;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 
 
-namespace ConsoleApp5
+namespace SudokuOmega7
 {
     public class SudokuGame
     {
         private readonly SudokuBoard _board;
-        private readonly SudokuSolver _solver;
+        private readonly SolverController _solver;
 
         public SudokuGame(IInput inputSource)
         {
             string input = inputSource.GetInput();
             _board = new SudokuBoard(input);
-            _solver = new SudokuSolver(_board);
+            _solver = new SolverController(_board);
         }
 
         public void Run()
