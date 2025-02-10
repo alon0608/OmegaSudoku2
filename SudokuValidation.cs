@@ -67,6 +67,38 @@ namespace SudokuOmega7
 
             return result;
         }
+
+        public static void ValidateSudokuRules(int[,] board, int size, int boxSize)
+        {
+            var rows = new HashSet<int>[size];
+            var cols = new HashSet<int>[size];
+            var boxes = new HashSet<int>[size];
+
+            for (int i = 0; i < size; i++)
+            {
+                rows[i] = new HashSet<int>();
+                cols[i] = new HashSet<int>();
+                boxes[i] = new HashSet<int>();
+            }
+
+            for (int r = 0; r < size; r++)
+            {
+                for (int c = 0; c < size; c++)
+                {
+                    int value = board[r, c];
+                    if (value == 0) continue;
+
+                    int boxIndex = (r / boxSize) * boxSize + (c / boxSize);
+
+                    if (!rows[r].Add(value))
+                        throw new ArgumentException($"Duplicate value '{SudokuInputValidation.ValueToChar(value)}' in row {r + 1}.");
+                    if (!cols[c].Add(value))
+                        throw new ArgumentException($"Duplicate value '{SudokuInputValidation.ValueToChar(value)}' in column {c + 1}.");
+                    if (!boxes[boxIndex].Add(value))
+                        throw new ArgumentException($"Duplicate value '{SudokuInputValidation.ValueToChar(value)}' in box {boxIndex + 1}.");
+                }
+            }
+        }
     }
 }
 
