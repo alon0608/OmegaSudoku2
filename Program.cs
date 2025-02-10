@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace SudokuOmega7
 {
+    //main class
     internal class Program
     {
         public static void Main(string[] args)
