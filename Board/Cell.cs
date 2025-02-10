@@ -14,17 +14,17 @@ namespace SudokuOmega7
     public class Cell
     {
         /// <summary>
-        /// The row index (0-based).
+        /// The row index 
         /// </summary>
         public int Row { get; }
 
         /// <summary>
-        /// The column index (0-based).
+        /// The column index 
         /// </summary>
         public int Col { get; }
 
         /// <summary>
-        /// The current value (0 means empty).
+        /// The current value 
         /// </summary>
         public int Value { get; set; }
 
