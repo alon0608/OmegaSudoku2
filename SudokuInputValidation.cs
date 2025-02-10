@@ -13,8 +13,10 @@ namespace SudokuOmega7
             int length = input.Length;
             int sqrt = (int)Math.Sqrt(length);
 
-            if (sqrt * sqrt != length || length > maxSize * maxSize)
-                throw new ArgumentException($"Invalid Sudoku size: {length} is not a perfect square or exceeds {maxSize}×{maxSize}.");
+            if (sqrt * sqrt != length)
+                throw new ArgumentException($"The input length is invalid. The number of characters must be a perfect square (1X1,4X4,16X16,25X25)");
+            if (length > maxSize * maxSize)
+                throw new ArgumentException($"Invalid Sudoku size: you entered {sqrt} X {sqrt} sudoku board but the maximum is  {maxSize} X {maxSize} sudoku.");
 
             int boxSize = (int)Math.Sqrt(sqrt);
 
@@ -25,6 +27,7 @@ namespace SudokuOmega7
             }
 
             int[,] board = ConvertToBoard(input, sqrt);
+            SudokuValidation.ValidateSudokuRules(board, sqrt, boxSize);
         }
 
         private static bool IsValidSudokuChar(char c, int size)

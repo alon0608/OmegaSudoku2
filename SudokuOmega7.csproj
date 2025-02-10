@@ -57,6 +57,7 @@
     <Compile Include="SolverState.cs" />
     <Compile Include="SudokoBoard.cs" />
     <Compile Include="SudokuGame.cs" />
+    <Compile Include="SudokuInputValidation.cs" />
     <Compile Include="SudokuValidation.cs" />
   </ItemGroup>
   <ItemGroup>
