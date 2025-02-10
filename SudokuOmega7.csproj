@@ -43,22 +43,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cell.cs" />
-    <Compile Include="ConsoleInput.cs" />
-    <Compile Include="FileInput.cs" />
-    <Compile Include="HiddenSinglesSolver.cs" />
-    <Compile Include="IInput.cs" />
-    <Compile Include="NakedSinglesSolver.cs" />
+    <Compile Include="Board\Cell.cs" />
+    <Compile Include="Input\ConsoleInput.cs" />
+    <Compile Include="Input\FileInput.cs" />
+    <Compile Include="Solvers\HiddenSinglesSolver.cs" />
+    <Compile Include="Input\IInput.cs" />
+    <Compile Include="Solvers\NakedSinglesSolver.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BoardStateManager.cs" />
-    <Compile Include="Solver.cs" />
-    <Compile Include="SolverController.cs" />
-    <Compile Include="SolverState.cs" />
-    <Compile Include="SudokoBoard.cs" />
-    <Compile Include="SudokuGame.cs" />
-    <Compile Include="SudokuInputValidation.cs" />
-    <Compile Include="SudokuValidation.cs" />
+    <Compile Include="Utils\BoardStateManager.cs" />
+    <Compile Include="Solvers\Solver.cs" />
+    <Compile Include="Solvers\SolverController.cs" />
+    <Compile Include="Board\SolverState.cs" />
+    <Compile Include="Board\SudokoBoard.cs" />
+    <Compile Include="Game\SudokuGame.cs" />
+    <Compile Include="Input\SudokuInputValidation.cs" />
+    <Compile Include="Board\SudokuValidation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -66,5 +66,6 @@
   <ItemGroup>
     <Content Include=".gitignore" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
