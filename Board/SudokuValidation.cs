@@ -6,8 +6,18 @@ using System.Threading.Tasks;
 
 namespace SudokuOmega7
 {
+    /// <summary>
+    /// Provides validation methods for checking if a Sudoku board follows the rules.
+    /// This includes verifying rows, columns, and boxes to ensure no duplicates.
+    /// </summary>
     public static class SudokuValidation
     {
+        /// <summary>
+        /// Checks if a given Sudoku board is valid.
+        /// A board is valid if all rows, columns, and boxes contain no duplicate numbers (excluding zeros).
+        /// </summary>
+        /// <param name="board">The Sudoku board to validate.</param>
+        /// <returns>True if the board is valid, otherwise false.</returns>
         public static bool IsValid(SudokuBoard board)
         {
             int size = board.GetSize();
@@ -22,18 +32,30 @@ namespace SudokuOmega7
             return true;
         }
 
+        /// <summary>
+        /// Checks if a group of numbers row, column, or box is valid.
+        /// A valid group contains no duplicate numbers excluding zeros.
+        /// </summary>
+        /// <param name="group">An array representing a row, column, or box.</param>
+        /// <returns>True if the group is valid, otherwise false.</returns>
         private static bool IsValidGroup(int[] group)
         {
-            var seen = new HashSet<int>();
-            foreach (var val in group)
+            HashSet<int> seen = new HashSet<int>();
+            foreach (int val in group)
             {
-                if (val == 0) continue;
-                if (seen.Contains(val)) return false;
+                if (val == 0) continue; // Ignore empty cells
+                if (seen.Contains(val)) return false; // Duplicate found
                 seen.Add(val);
             }
             return true;
         }
 
+        /// <summary>
+        /// Retrieves all values from a specific row in the Sudoku board.
+        /// </summary>
+        /// <param name="board">The Sudoku board.</param>
+        /// <param name="row">The row index .</param>
+        /// <returns>An array containing the numbers from the row.</returns>
         private static int[] GetRow(SudokuBoard board, int row)
         {
             int size = board.GetSize();
@@ -43,6 +65,12 @@ namespace SudokuOmega7
             return result;
         }
 
+        /// <summary>
+        /// Retrieves all values from a specific column in the Sudoku board.
+        /// </summary>
+        /// <param name="board">The Sudoku board.</param>
+        /// <param name="col">The column index .</param>
+        /// <returns>An array containing the numbers from the column.</returns>
         private static int[] GetColumn(SudokuBoard board, int col)
         {
             int size = board.GetSize();
@@ -52,6 +80,12 @@ namespace SudokuOmega7
             return result;
         }
 
+        /// <summary>
+        /// Retrieves all values from a specific box in the Sudoku board.
+        /// </summary>
+        /// <param name="board">The Sudoku board.</param>
+        /// <param name="boxIndex">The box index .</param>
+        /// <returns>An array containing the numbers from the box.</returns>
         private static int[] GetBox(SudokuBoard board, int boxIndex)
         {
             int boxSize = board.GetBoxSize();
@@ -68,11 +102,19 @@ namespace SudokuOmega7
             return result;
         }
 
+        /// <summary>
+        /// Validates the Sudoku board and ensures no rule violations.
+        /// Throws an exception if there are duplicate values in rows, columns, or boxes.
+        /// </summary>
+        /// <param name="board">A integer array representing the Sudoku grid.</param>
+        /// <param name="size">The size of the board.</param>
+        /// <param name="boxSize">The size of a single Sudoku box.</param>
+        /// <exception cref="ArgumentException">Thrown if a duplicate value is found.</exception>
         public static void ValidateSudokuRules(int[,] board, int size, int boxSize)
         {
-            var rows = new HashSet<int>[size];
-            var cols = new HashSet<int>[size];
-            var boxes = new HashSet<int>[size];
+            HashSet<int>[] rows = new HashSet<int>[size];
+            HashSet<int>[] cols = new HashSet<int>[size];
+            HashSet<int>[] boxes = new HashSet<int>[size];
 
             for (int i = 0; i < size; i++)
             {
@@ -101,4 +143,3 @@ namespace SudokuOmega7
         }
     }
 }
-

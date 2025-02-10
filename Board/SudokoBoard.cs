@@ -125,7 +125,6 @@ namespace SudokuOmega7
             {
                 for (int j = 0; j < _size; j++)
                 {
-                    Console.Write(" ");
                     Console.Write(_board[i, j] == 0 ? '.' : ConvertToChar(_board[i, j]));
                     if ((j + 1) % _boxSize == 0 && j + 1 != _size)
                         Console.Write(" | ");
