@@ -1,4 +1,4 @@
-﻿using AlonSudoku.Core.SudokuBoardClass;
+﻿using AlonSudoku.Board;
 using AlonSudoku.Input;
 using AlonSudoku.Solvers;
 using AlonSudoku.Validation;

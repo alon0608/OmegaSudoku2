@@ -1,4 +1,4 @@
-﻿namespace AlonSudoku.Core.SudokuBoardClass
+﻿namespace AlonSudoku.Board
 {
     /// <summary>
     /// Represents a Sudoku board that can store and manipulate the puzzle's state.

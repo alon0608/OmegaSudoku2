@@ -1,4 +1,4 @@
-﻿namespace AlonSudoku.Core.Cell
+﻿namespace AlonSudoku.Board
 {
     /// <summary>
     /// This class is a single Sudoku cell.

@@ -1,4 +1,4 @@
-﻿using AlonSudoku.Core.SudokuBoardClass;
+﻿using AlonSudoku.Board;
 
 namespace AlonSudoku.Core.BoardStateManagerClass
 {
