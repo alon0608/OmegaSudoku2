@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AlonSudoku
+namespace AlonSudoku.Core.Cell
 {
     /// <summary>
     /// This class is a single Sudoku cell.

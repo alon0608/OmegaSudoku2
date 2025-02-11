@@ -1,10 +1,11 @@
-﻿using System;
+﻿using AlonSudoku.Core.SudokuBoardClass;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AlonSudoku
+namespace AlonSudoku.Validation
 {
     /// <summary>
     /// Provides validation methods for checking if a Sudoku board follows the rules.
@@ -91,8 +92,8 @@ namespace AlonSudoku
             int boxSize = board.GetBoxSize();
             int size = board.GetSize();
             int[] result = new int[size];
-            int startRow = (boxIndex / boxSize) * boxSize;
-            int startCol = (boxIndex % boxSize) * boxSize;
+            int startRow = boxIndex / boxSize * boxSize;
+            int startCol = boxIndex % boxSize * boxSize;
             int index = 0;
 
             for (int r = 0; r < boxSize; r++)
@@ -130,7 +131,7 @@ namespace AlonSudoku
                     int value = board[r, c];
                     if (value == 0) continue;
 
-                    int boxIndex = (r / boxSize) * boxSize + (c / boxSize);
+                    int boxIndex = r / boxSize * boxSize + c / boxSize;
 
                     if (!rows[r].Add(value))
                         throw new ArgumentException($"Duplicate value '{SudokuInputValidation.ValueToChar(value)}' in row {r + 1}.");

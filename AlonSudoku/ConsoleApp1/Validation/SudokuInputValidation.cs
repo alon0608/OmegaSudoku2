@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AlonSudoku
+namespace AlonSudoku.Validation
 {
     /// <summary>
     /// Handles validation and conversion of Sudoku input strings.
@@ -26,7 +26,7 @@ namespace AlonSudoku
 
             // Check if the length is a perfect square (valid Sudoku board dimensions)
             if (sqrt * sqrt != length)
-                throw new ArgumentException($"The input length is invalid. The number of characters must be a perfect square (1x1, 4x4, 16x16, 25x25).");
+                throw new ArgumentException($"The input length is invalid. The number of characters must be a perfect square (1x1, 4x4, 9x 16x16, 25x25).");
 
             // Ensure the board is within the allowed max size
             if (length > maxSize * maxSize)
@@ -65,7 +65,7 @@ namespace AlonSudoku
             // For larger boards, additional ASCII characters are used
             else
             {
-                return (c >= '1' && c <= '9') || (c >= ':' && c < (char)(':' + (size - 9)));
+                return c >= '1' && c <= '9' || c >= ':' && c < (char)(':' + (size - 9));
             }
         }
 

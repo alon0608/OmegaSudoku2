@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AlonSudoku
+namespace AlonSudoku.Core.SudokuBoardClass
 {
     /// <summary>
     /// Represents a Sudoku board that can store and manipulate the puzzle's state.
@@ -125,6 +125,7 @@ namespace AlonSudoku
             {
                 for (int j = 0; j < _size; j++)
                 {
+                    Console.Write(" ");
                     Console.Write(_board[i, j] == 0 ? '.' : ConvertToChar(_board[i, j]));
                     if ((j + 1) % _boxSize == 0 && j + 1 != _size)
                         Console.Write(" | ");
@@ -161,14 +162,14 @@ namespace AlonSudoku
         /// <exception cref="ArgumentException">Thrown if board sizes do not match.</exception>
         public void CopyFrom(SudokuBoard other)
         {
-            if (other.GetSize() != this._size)
+            if (other.GetSize() != _size)
                 throw new ArgumentException("Board sizes do not match.");
 
             for (int i = 0; i < _size; i++)
             {
                 for (int j = 0; j < _size; j++)
                 {
-                    this._board[i, j] = other.GetCellValue(i, j);
+                    _board[i, j] = other.GetCellValue(i, j);
                 }
             }
         }

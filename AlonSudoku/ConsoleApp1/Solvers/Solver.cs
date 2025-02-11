@@ -1,6 +1,10 @@
-﻿using System;
+﻿using AlonSudoku.Core.SudokuBoardClass;
+using AlonSudoku.Solvers;
+using AlonSudoku.Core.SolverState;
+using AlonSudoku.Core.BoardStateManagerClass;
+using System;
 
-namespace AlonSudoku
+namespace AlonSudoku.Solvers
 {
     /// <summary>
     /// Implements a Sudoku solver that uses backtracking and logical solving strategies
@@ -52,12 +56,12 @@ namespace AlonSudoku
             int boxIndex = BoardStateManager.GetBoxIndex(bestCandidateRow, bestCandidateCol, _state.BoxSize);
             int availableNumbersMask = ~(_state.RowConstraints[bestCandidateRow] |
                                          _state.ColConstraints[bestCandidateCol] |
-                                         _state.BoxConstraints[boxIndex]) & ((1 << _state.Size) - 1);
+                                         _state.BoxConstraints[boxIndex]) & (1 << _state.Size) - 1;
 
             // Try each available number in the selected cell
             for (int val = 1; val <= _state.Size; val++)
             {
-                int mask = 1 << (val - 1);
+                int mask = 1 << val - 1;
                 if ((availableNumbersMask & mask) != 0)
                 {
                     // Clone board state before making a guess
@@ -121,13 +125,13 @@ namespace AlonSudoku
                         continue;
 
                     int usedMask = _state.RowConstraints[r] | _state.ColConstraints[c] | _state.BoxConstraints[BoardStateManager.GetBoxIndex(r, c, _state.BoxSize)];
-                    int options = ~usedMask & ((1 << _state.Size) - 1);
+                    int options = ~usedMask & (1 << _state.Size) - 1;
                     int optionCount = BoardStateManager.PopCount(options);
 
                     // Degree heuristic: prioritize cells affecting more empty neighbors
                     int degree = _state.EmptyCellsInRow[r].Count + _state.EmptyCellsInCol[c].Count + _state.EmptyCellsInBox[BoardStateManager.GetBoxIndex(r, c, _state.BoxSize)].Count;
 
-                    if (optionCount < minOptions || (optionCount == minOptions && degree > highestDegree))
+                    if (optionCount < minOptions || optionCount == minOptions && degree > highestDegree)
                     {
                         minOptions = optionCount;
                         bestCandidateRow = r;

@@ -1,7 +1,7 @@
-﻿
+﻿using AlonSudoku.Validation;
 using System;
 
-namespace AlonSudoku
+namespace AlonSudoku.Input
 {
     public class ConsoleInputSource : IInput
     {

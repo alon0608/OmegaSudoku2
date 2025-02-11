@@ -1,10 +1,15 @@
-﻿using System;
+﻿using AlonSudoku.Input;
+using AlonSudoku.Core.SolverState;
+using AlonSudoku.Solvers;
+using AlonSudoku.Validation;
+using AlonSudoku.Core.SudokuBoardClass;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AlonSudoku
+namespace AlonSudoku.Core.SudokuGame
 {
     /// <summary>
     /// Manages a Sudoku game, including loading the board and validating it,

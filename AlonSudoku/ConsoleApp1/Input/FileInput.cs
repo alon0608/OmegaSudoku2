@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-namespace AlonSudoku
+namespace AlonSudoku.Input
 {
 
     public class FileInputSource : IInput

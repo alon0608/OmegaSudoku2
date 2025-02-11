@@ -1,10 +1,12 @@
-﻿using System;
+﻿using AlonSudoku.Core.SudokuBoardClass;
+using AlonSudoku.Core.BoardStateManagerClass;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AlonSudoku
+namespace AlonSudoku.Solvers
 {
     /// <summary>
     /// Implements the Hidden Singles solving technique for Sudoku.
@@ -75,11 +77,11 @@ namespace AlonSudoku
                         continue;
 
                     int usedMask = rowUsed[r] | colUsed[c] | boxUsed[BoardStateManager.GetBoxIndex(r, c, boxSize)];
-                    int options = ~usedMask & ((1 << size) - 1);
+                    int options = ~usedMask & (1 << size) - 1;
 
                     for (int val = 1; val <= size; val++)
                     {
-                        if ((options & (1 << (val - 1))) != 0)
+                        if ((options & 1 << val - 1) != 0)
                         {
                             valueToCells[val].Add((r, c));
                         }
@@ -127,8 +129,8 @@ namespace AlonSudoku
                         cells.Add((r, unit));
                     break;
                 case UnitType.Box:
-                    int startRow = (unit / boxSize) * boxSize;
-                    int startCol = (unit % boxSize) * boxSize;
+                    int startRow = unit / boxSize * boxSize;
+                    int startCol = unit % boxSize * boxSize;
                     for (int r = 0; r < boxSize; r++)
                     {
                         for (int c = 0; c < boxSize; c++)

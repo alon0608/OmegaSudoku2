@@ -1,10 +1,12 @@
-﻿using System;
+﻿using AlonSudoku.Core.SudokuBoardClass;
+using AlonSudoku.Core.BoardStateManagerClass;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AlonSudoku
+namespace AlonSudoku.Core.SolverState
 {
     public class SolverState
     {
@@ -56,7 +58,7 @@ namespace AlonSudoku
                     }
                     else
                     {
-                        int mask = 1 << (val - 1);
+                        int mask = 1 << val - 1;
                         RowConstraints[r] |= mask;
                         ColConstraints[c] |= mask;
                         BoxConstraints[boxIndex] |= mask;
