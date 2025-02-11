@@ -1,0 +1,15 @@
+C:\Users\ellas\OneDrive\Desktop\SudokuOmega7\AlonSudoku\ConsoleApp1\bin\Debug\net8.0\AlonSudoku.exe
+C:\Users\ellas\OneDrive\Desktop\SudokuOmega7\AlonSudoku\ConsoleApp1\bin\Debug\net8.0\AlonSudoku.deps.json
+C:\Users\ellas\OneDrive\Desktop\SudokuOmega7\AlonSudoku\ConsoleApp1\bin\Debug\net8.0\AlonSudoku.runtimeconfig.json
+C:\Users\ellas\OneDrive\Desktop\SudokuOmega7\AlonSudoku\ConsoleApp1\bin\Debug\net8.0\AlonSudoku.dll
+C:\Users\ellas\OneDrive\Desktop\SudokuOmega7\AlonSudoku\ConsoleApp1\bin\Debug\net8.0\AlonSudoku.pdb
+C:\Users\ellas\OneDrive\Desktop\SudokuOmega7\AlonSudoku\ConsoleApp1\obj\Debug\net8.0\AlonSudoku.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ellas\OneDrive\Desktop\SudokuOmega7\AlonSudoku\ConsoleApp1\obj\Debug\net8.0\AlonSudoku.AssemblyInfoInputs.cache
+C:\Users\ellas\OneDrive\Desktop\SudokuOmega7\AlonSudoku\ConsoleApp1\obj\Debug\net8.0\AlonSudoku.AssemblyInfo.cs
+C:\Users\ellas\OneDrive\Desktop\SudokuOmega7\AlonSudoku\ConsoleApp1\obj\Debug\net8.0\AlonSudoku.csproj.CoreCompileInputs.cache
+C:\Users\ellas\OneDrive\Desktop\SudokuOmega7\AlonSudoku\ConsoleApp1\obj\Debug\net8.0\AlonSudoku.sourcelink.json
+C:\Users\ellas\OneDrive\Desktop\SudokuOmega7\AlonSudoku\ConsoleApp1\obj\Debug\net8.0\AlonSudoku.dll
+C:\Users\ellas\OneDrive\Desktop\SudokuOmega7\AlonSudoku\ConsoleApp1\obj\Debug\net8.0\refint\AlonSudoku.dll
+C:\Users\ellas\OneDrive\Desktop\SudokuOmega7\AlonSudoku\ConsoleApp1\obj\Debug\net8.0\AlonSudoku.pdb
+C:\Users\ellas\OneDrive\Desktop\SudokuOmega7\AlonSudoku\ConsoleApp1\obj\Debug\net8.0\AlonSudoku.genruntimeconfig.cache
+C:\Users\ellas\OneDrive\Desktop\SudokuOmega7\AlonSudoku\ConsoleApp1\obj\Debug\net8.0\ref\AlonSudoku.dll
