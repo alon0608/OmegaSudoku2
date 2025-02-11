@@ -1,0 +1,37 @@
+# 🔹 Ignore build outputs
+bin/
+obj/
+out/
+*.exe
+*.dll
+*.pdb
+*.appx
+*.appxbundle
+*.msix
+*.msixbundle
+
+# 🔹 Ignore Visual Studio files
+.vs/
+*.suo
+*.user
+*.cache
+*.log
+*.csproj.user
+
+# 🔹 Ignore Test Results
+TestResults/
+*.coverage
+.coverage*
+
+# 🔹 Ignore package and dependencies
+packages/
+.nuget/
+*.nupkg
+project.lock.json
+
+# 🔹 Ignore user-specific settings
+*.sln.ide
+.idea/
+*.iml
+*.csproj.vspscc
+*.sln*
