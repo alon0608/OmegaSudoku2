@@ -20,7 +20,7 @@ namespace AlonSudoku.Input
             {
                 try
                 {
-                    Console.WriteLine("Enter the Sudoku puzzle as a single line (use '.' for empty cells):");
+                    Console.WriteLine("Enter the Sudoku puzzle as a single line (use '.' or '0' for empty cells):");
                     string input = Console.ReadLine()?.Replace(".", "0"); // Convert '.' to '0' for processing
 
                     if (string.IsNullOrWhiteSpace(input))
@@ -33,7 +33,7 @@ namespace AlonSudoku.Input
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"⚠️ Error: {ex.Message}");
+                    Console.WriteLine($"Error: {ex.Message}");
                     Console.WriteLine("Please try again.\n");
                 }
             }
