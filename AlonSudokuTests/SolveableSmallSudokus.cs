@@ -71,5 +71,71 @@ namespace AlonSudokuTests
 
             Assert.IsTrue(result);
         }
+
+        [TestMethod]
+        public void Hard_Small_Sudoko6()
+        {
+            string validSudokuInput = "800000000095000000067000000000020485000403192000000736000651947000732518000894263";
+
+            SudokuBoard board = new SudokuBoard(validSudokuInput);
+            SolverController solver = new SolverController(board);
+
+            bool result = solver.Solve();
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void Hard_Small_Sudoko7()
+        {
+            string validSudokuInput = "800000000059000000076000000000978245000653198000412736000591000000836010000724080";
+
+            SudokuBoard board = new SudokuBoard(validSudokuInput);
+            SolverController solver = new SolverController(board);
+
+            bool result = solver.Solve();
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void Hard_Small_Sudoko8()
+        {
+            string validSudokuInput = "800000000059000000067000000000756238000418796000923415000571060000892107000634000";
+
+            SudokuBoard board = new SudokuBoard(validSudokuInput);
+            SolverController solver = new SolverController(board);
+
+            bool result = solver.Solve();
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void Hard_Small_Sudoko9()
+        {
+            string validSudokuInput = "800000000095000000076000000000974286000512943000638517000791060000423708000856000";
+
+            SudokuBoard board = new SudokuBoard(validSudokuInput);
+            SolverController solver = new SolverController(board);
+
+            bool result = solver.Solve();
+
+            Assert.IsTrue(result);
+        }
+
+
+        [TestMethod]
+        public void Hard_Small_Sudoko10()
+        {
+            string validSudokuInput = "800000000059000000067000000000030265000406198000000437000753916000891742000624583";
+
+            SudokuBoard board = new SudokuBoard(validSudokuInput);
+            SolverController solver = new SolverController(board);
+
+            bool result = solver.Solve();
+
+            Assert.IsTrue(result);
+        }
     }
 }
