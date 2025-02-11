@@ -9,7 +9,7 @@ namespace AlonSudokuTests
         [TestMethod]
         public void Empty_Sudoku_1X1()
         {
-            string validSudokuInput ="0"; 
+            string validSudokuInput = "0";
 
             SudokuBoard board = new SudokuBoard(validSudokuInput);
             SolverController solver = new SolverController(board);

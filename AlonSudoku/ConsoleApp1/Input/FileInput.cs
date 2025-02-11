@@ -1,7 +1,5 @@
-﻿using System;
-using System.IO;
+﻿using AlonSudoku.Exceptions;
 using AlonSudoku.Validation;
-using AlonSudoku.Exceptions;
 
 namespace AlonSudoku.Input
 {

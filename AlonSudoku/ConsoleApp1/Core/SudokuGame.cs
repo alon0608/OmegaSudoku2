@@ -1,13 +1,7 @@
-﻿using AlonSudoku.Input;
-using AlonSudoku.Core.SolverState;
+﻿using AlonSudoku.Core.SudokuBoardClass;
+using AlonSudoku.Input;
 using AlonSudoku.Solvers;
 using AlonSudoku.Validation;
-using AlonSudoku.Core.SudokuBoardClass;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AlonSudoku.Core.SudokuGame
 {

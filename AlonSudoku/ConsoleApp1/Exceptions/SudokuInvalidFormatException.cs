@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
-namespace AlonSudoku.Exceptions
+﻿namespace AlonSudoku.Exceptions
 {
     /// <summary>
     /// Exception thrown when the Sudoku puzzle format is invalid.

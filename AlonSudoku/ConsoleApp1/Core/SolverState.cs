@@ -1,7 +1,5 @@
-﻿using AlonSudoku.Core.SudokuBoardClass;
-using AlonSudoku.Core.BoardStateManagerClass;
-using System;
-using System.Collections.Generic;
+﻿using AlonSudoku.Core.BoardStateManagerClass;
+using AlonSudoku.Core.SudokuBoardClass;
 
 namespace AlonSudoku.Core.SolverState
 {

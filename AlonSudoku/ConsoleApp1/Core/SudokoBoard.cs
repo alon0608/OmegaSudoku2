@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AlonSudoku.Core.SudokuBoardClass
+﻿namespace AlonSudoku.Core.SudokuBoardClass
 {
     /// <summary>
     /// Represents a Sudoku board that can store and manipulate the puzzle's state.

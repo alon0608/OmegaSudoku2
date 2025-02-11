@@ -1,5 +1,4 @@
 ﻿using AlonSudoku.Core.SudokuBoardClass;
-using System;
 
 namespace AlonSudoku.Solvers
 {

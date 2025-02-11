@@ -1,8 +1,6 @@
-﻿using AlonSudoku.Input;
-using AlonSudoku.Core.SudokuGame;
-using System;
+﻿using AlonSudoku.Core.SudokuGame;
+using AlonSudoku.Input;
 using System.Diagnostics;
-using System.Threading;
 
 namespace AlonSudoku
 {
