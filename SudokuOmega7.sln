@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuOmega7", "SudokuOmega7.csproj", "{759F902B-DE2C-47D0-9393-940A406612D9}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlonSudoku", "AlonSudoku\ConsoleApp1\AlonSudoku.csproj", "{9E2A8D26-33CE-41C7-A094-C374E9BFE86B}"
 EndProject
 Global
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{759F902B-DE2C-47D0-9393-940A406612D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{759F902B-DE2C-47D0-9393-940A406612D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{759F902B-DE2C-47D0-9393-940A406612D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{759F902B-DE2C-47D0-9393-940A406612D9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9E2A8D26-33CE-41C7-A094-C374E9BFE86B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9E2A8D26-33CE-41C7-A094-C374E9BFE86B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E2A8D26-33CE-41C7-A094-C374E9BFE86B}.Release|Any CPU.ActiveCfg = Release|Any CPU
