@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AlonSudokuTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8641090af1894f7078798144c392e35154d04995")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c2e8b15cf201503f6cc9cebb6c98649707048ae")]
 [assembly: System.Reflection.AssemblyProductAttribute("AlonSudokuTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AlonSudokuTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
