@@ -95,7 +95,6 @@ namespace AlonSudoku.Solvers
         {
             bool progress = false;
             progress |= NakedSinglesSolver.ApplyNakedSingles(_board, _state.RowConstraints, _state.ColConstraints, _state.BoxConstraints, _state.Size, _state.BoxSize);
-
             // Apply Hidden Singles only for large boards (size >= 16)
             if (_state.Size >= 16)
             {
