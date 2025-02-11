@@ -1,7 +1,10 @@
 ﻿using AlonSudoku.Board;
+using AlonSudoku.Exceptions;
 using AlonSudoku.Solvers;
+using AlonSudoku.Validation;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AlonSudokuTests
+namespace AlonSudokuTests.SolveableBoards
 {
     [TestClass]
     public sealed class SolveableBigSudokus
@@ -43,6 +46,7 @@ namespace AlonSudokuTests
 
             Assert.IsTrue(result);
         }
+
 
     }
 }

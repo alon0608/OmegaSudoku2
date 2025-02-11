@@ -1,7 +1,7 @@
 ﻿using AlonSudoku.Board;
 using AlonSudoku.Solvers;
 
-namespace AlonSudokuTests
+namespace AlonSudokuTests.SolveableBoards
 {
     [TestClass]
     public sealed class EmptySudokus

@@ -1,5 +1,7 @@
-﻿using AlonSudoku.Exceptions;
+﻿using System;
+using System.IO;
 using AlonSudoku.Validation;
+using AlonSudoku.Exceptions;
 
 namespace AlonSudoku.Input
 {
@@ -31,7 +33,7 @@ namespace AlonSudoku.Input
                         .Trim();
 
                     if (string.IsNullOrWhiteSpace(input))
-                        throw new SudokuInvalidFormatException("The file is empty or contains only whitespace.");
+                        throw new SudokuEmptyFile("The file is empty or contains only whitespace!.");
 
                     SudokuInputValidation.ValidateInput(input);
                     return input;
@@ -40,7 +42,7 @@ namespace AlonSudoku.Input
                 {
                     Console.WriteLine(ex.Message);
                 }
-                catch (SudokuInvalidFormatException ex)
+                catch (SudokuEmptyFile ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
@@ -54,6 +56,10 @@ namespace AlonSudoku.Input
 
                 if (string.Equals(newFilePath, "exit", StringComparison.OrdinalIgnoreCase))
                 {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("\n  Exiting program. Goodbye!");
+                    Console.ResetColor();
+                    Thread.Sleep(1500);
                     return null;
                 }
 

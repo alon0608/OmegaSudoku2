@@ -14,19 +14,21 @@ namespace AlonSudoku.Validation
         /// </summary>
         /// <param name="input">The Sudoku board represented as a single string.</param>
         /// <param name="maxSize">The maximum allowed Sudoku board size (default is 25x25).</param>
-        /// <exception cref="SudokuInvalidFormatException">Thrown if the input is not a valid Sudoku format.</exception>
+        /// <exception cref="SudokuEmptyFile">Thrown if the input is not a valid Sudoku format.</exception>
         public static void ValidateInput(string input, int maxSize = 25)
         {
             int length = input.Length;
             int sqrt = (int)Math.Sqrt(length);
 
+            if (string.IsNullOrWhiteSpace(input))
+                throw new EmptySudokuInputException("Input cannot be empty. Please enter a valid Sudoku string.");
             // Check if the length is a perfect square (valid Sudoku board dimensions)
             if (sqrt * sqrt != length)
-                throw new SudokuInvalidFormatException($"The input length is invalid. The number of characters must be a perfect square (1x1, 4x4, 9x9, 16x16, 25x25).");
+                throw new InvalidSudokuLengthException($"The input length is invalid. The number of characters must be a perfect square (1x1, 4x4, 9x9, 16x16, 25x25).");
 
             // Ensure the board is within the allowed max size
             if (length > maxSize * maxSize)
-                throw new SudokuInvalidFormatException($"Invalid Sudoku size: you entered a {sqrt}x{sqrt} board, but the maximum allowed size is {maxSize}x{maxSize}.");
+                throw new InvalidSudokuLengthException($"Invalid Sudoku size: you entered a {sqrt}x{sqrt} board, but the maximum allowed size is {maxSize}x{maxSize}.");
 
             int boxSize = (int)Math.Sqrt(sqrt);
 
@@ -34,7 +36,7 @@ namespace AlonSudoku.Validation
             foreach (char c in input)
             {
                 if (!IsValidSudokuChar(c, sqrt))
-                    throw new SudokuInvalidFormatException($"Invalid character : '{c}' is not within the expected numbers range.");
+                    throw new InvalidSudokuCharacterException($"Invalid character : '{c}' is not within the expected numbers range.");
             }
 
             // Convert to a board representation and validate Sudoku rules
