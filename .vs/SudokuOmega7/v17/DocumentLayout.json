@@ -1,0 +1,156 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ellas\\OneDrive\\Desktop\\SudokuOmega7\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9E2A8D26-33CE-41C7-A094-C374E9BFE86B}|AlonSudoku\\ConsoleApp1\\AlonSudoku.csproj|c:\\users\\ellas\\onedrive\\desktop\\sudokuomega7\\alonsudoku\\consoleapp1\\input\\fileinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E2A8D26-33CE-41C7-A094-C374E9BFE86B}|AlonSudoku\\ConsoleApp1\\AlonSudoku.csproj|solutionrelative:alonsudoku\\consoleapp1\\input\\fileinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E2A8D26-33CE-41C7-A094-C374E9BFE86B}|AlonSudoku\\ConsoleApp1\\AlonSudoku.csproj|c:\\users\\ellas\\onedrive\\desktop\\sudokuomega7\\alonsudoku\\consoleapp1\\input\\iinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E2A8D26-33CE-41C7-A094-C374E9BFE86B}|AlonSudoku\\ConsoleApp1\\AlonSudoku.csproj|solutionrelative:alonsudoku\\consoleapp1\\input\\iinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E2A8D26-33CE-41C7-A094-C374E9BFE86B}|AlonSudoku\\ConsoleApp1\\AlonSudoku.csproj|c:\\users\\ellas\\onedrive\\desktop\\sudokuomega7\\alonsudoku\\consoleapp1\\input\\consoleinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E2A8D26-33CE-41C7-A094-C374E9BFE86B}|AlonSudoku\\ConsoleApp1\\AlonSudoku.csproj|solutionrelative:alonsudoku\\consoleapp1\\input\\consoleinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E2A8D26-33CE-41C7-A094-C374E9BFE86B}|AlonSudoku\\ConsoleApp1\\AlonSudoku.csproj|c:\\users\\ellas\\onedrive\\desktop\\sudokuomega7\\alonsudoku\\consoleapp1\\core\\boardstatemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E2A8D26-33CE-41C7-A094-C374E9BFE86B}|AlonSudoku\\ConsoleApp1\\AlonSudoku.csproj|solutionrelative:alonsudoku\\consoleapp1\\core\\boardstatemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E2A8D26-33CE-41C7-A094-C374E9BFE86B}|AlonSudoku\\ConsoleApp1\\AlonSudoku.csproj|c:\\users\\ellas\\onedrive\\desktop\\sudokuomega7\\alonsudoku\\consoleapp1\\core\\sudokugame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E2A8D26-33CE-41C7-A094-C374E9BFE86B}|AlonSudoku\\ConsoleApp1\\AlonSudoku.csproj|solutionrelative:alonsudoku\\consoleapp1\\core\\sudokugame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E2A8D26-33CE-41C7-A094-C374E9BFE86B}|AlonSudoku\\ConsoleApp1\\AlonSudoku.csproj|c:\\users\\ellas\\onedrive\\desktop\\sudokuomega7\\alonsudoku\\consoleapp1\\core\\sudokoboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E2A8D26-33CE-41C7-A094-C374E9BFE86B}|AlonSudoku\\ConsoleApp1\\AlonSudoku.csproj|solutionrelative:alonsudoku\\consoleapp1\\core\\sudokoboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E2A8D26-33CE-41C7-A094-C374E9BFE86B}|AlonSudoku\\ConsoleApp1\\AlonSudoku.csproj|c:\\users\\ellas\\onedrive\\desktop\\sudokuomega7\\alonsudoku\\consoleapp1\\core\\solverstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E2A8D26-33CE-41C7-A094-C374E9BFE86B}|AlonSudoku\\ConsoleApp1\\AlonSudoku.csproj|solutionrelative:alonsudoku\\consoleapp1\\core\\solverstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E2A8D26-33CE-41C7-A094-C374E9BFE86B}|AlonSudoku\\ConsoleApp1\\AlonSudoku.csproj|c:\\users\\ellas\\onedrive\\desktop\\sudokuomega7\\alonsudoku\\consoleapp1\\core\\cell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E2A8D26-33CE-41C7-A094-C374E9BFE86B}|AlonSudoku\\ConsoleApp1\\AlonSudoku.csproj|solutionrelative:alonsudoku\\consoleapp1\\core\\cell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IInput.cs",
+              "DocumentMoniker": "C:\\Users\\ellas\\OneDrive\\Desktop\\SudokuOmega7\\AlonSudoku\\ConsoleApp1\\Input\\IInput.cs",
+              "RelativeDocumentMoniker": "AlonSudoku\\ConsoleApp1\\Input\\IInput.cs",
+              "ToolTip": "C:\\Users\\ellas\\OneDrive\\Desktop\\SudokuOmega7\\AlonSudoku\\ConsoleApp1\\Input\\IInput.cs",
+              "RelativeToolTip": "AlonSudoku\\ConsoleApp1\\Input\\IInput.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T11:06:55.741Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FileInput.cs",
+              "DocumentMoniker": "C:\\Users\\ellas\\OneDrive\\Desktop\\SudokuOmega7\\AlonSudoku\\ConsoleApp1\\Input\\FileInput.cs",
+              "RelativeDocumentMoniker": "AlonSudoku\\ConsoleApp1\\Input\\FileInput.cs",
+              "ToolTip": "C:\\Users\\ellas\\OneDrive\\Desktop\\SudokuOmega7\\AlonSudoku\\ConsoleApp1\\Input\\FileInput.cs",
+              "RelativeToolTip": "AlonSudoku\\ConsoleApp1\\Input\\FileInput.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T10:37:15.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ConsoleInput.cs",
+              "DocumentMoniker": "C:\\Users\\ellas\\OneDrive\\Desktop\\SudokuOmega7\\AlonSudoku\\ConsoleApp1\\Input\\ConsoleInput.cs",
+              "RelativeDocumentMoniker": "AlonSudoku\\ConsoleApp1\\Input\\ConsoleInput.cs",
+              "ToolTip": "C:\\Users\\ellas\\OneDrive\\Desktop\\SudokuOmega7\\AlonSudoku\\ConsoleApp1\\Input\\ConsoleInput.cs",
+              "RelativeToolTip": "AlonSudoku\\ConsoleApp1\\Input\\ConsoleInput.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T10:37:12.426Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BoardStateManager.cs",
+              "DocumentMoniker": "C:\\Users\\ellas\\OneDrive\\Desktop\\SudokuOmega7\\AlonSudoku\\ConsoleApp1\\Core\\BoardStateManager.cs",
+              "RelativeDocumentMoniker": "AlonSudoku\\ConsoleApp1\\Core\\BoardStateManager.cs",
+              "ToolTip": "C:\\Users\\ellas\\OneDrive\\Desktop\\SudokuOmega7\\AlonSudoku\\ConsoleApp1\\Core\\BoardStateManager.cs",
+              "RelativeToolTip": "AlonSudoku\\ConsoleApp1\\Core\\BoardStateManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T10:37:09.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SudokuGame.cs",
+              "DocumentMoniker": "C:\\Users\\ellas\\OneDrive\\Desktop\\SudokuOmega7\\AlonSudoku\\ConsoleApp1\\Core\\SudokuGame.cs",
+              "RelativeDocumentMoniker": "AlonSudoku\\ConsoleApp1\\Core\\SudokuGame.cs",
+              "ToolTip": "C:\\Users\\ellas\\OneDrive\\Desktop\\SudokuOmega7\\AlonSudoku\\ConsoleApp1\\Core\\SudokuGame.cs",
+              "RelativeToolTip": "AlonSudoku\\ConsoleApp1\\Core\\SudokuGame.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T10:37:07.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SudokoBoard.cs",
+              "DocumentMoniker": "C:\\Users\\ellas\\OneDrive\\Desktop\\SudokuOmega7\\AlonSudoku\\ConsoleApp1\\Core\\SudokoBoard.cs",
+              "RelativeDocumentMoniker": "AlonSudoku\\ConsoleApp1\\Core\\SudokoBoard.cs",
+              "ToolTip": "C:\\Users\\ellas\\OneDrive\\Desktop\\SudokuOmega7\\AlonSudoku\\ConsoleApp1\\Core\\SudokoBoard.cs",
+              "RelativeToolTip": "AlonSudoku\\ConsoleApp1\\Core\\SudokoBoard.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T10:37:05.97Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SolverState.cs",
+              "DocumentMoniker": "C:\\Users\\ellas\\OneDrive\\Desktop\\SudokuOmega7\\AlonSudoku\\ConsoleApp1\\Core\\SolverState.cs",
+              "RelativeDocumentMoniker": "AlonSudoku\\ConsoleApp1\\Core\\SolverState.cs",
+              "ToolTip": "C:\\Users\\ellas\\OneDrive\\Desktop\\SudokuOmega7\\AlonSudoku\\ConsoleApp1\\Core\\SolverState.cs",
+              "RelativeToolTip": "AlonSudoku\\ConsoleApp1\\Core\\SolverState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T10:37:04.833Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Cell.cs",
+              "DocumentMoniker": "C:\\Users\\ellas\\OneDrive\\Desktop\\SudokuOmega7\\AlonSudoku\\ConsoleApp1\\Core\\Cell.cs",
+              "RelativeDocumentMoniker": "AlonSudoku\\ConsoleApp1\\Core\\Cell.cs",
+              "ToolTip": "C:\\Users\\ellas\\OneDrive\\Desktop\\SudokuOmega7\\AlonSudoku\\ConsoleApp1\\Core\\Cell.cs",
+              "RelativeToolTip": "AlonSudoku\\ConsoleApp1\\Core\\Cell.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T10:37:02.838Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
