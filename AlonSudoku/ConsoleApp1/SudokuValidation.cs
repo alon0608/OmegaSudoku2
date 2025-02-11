@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SudokuOmega7
+namespace AlonSudoku
 {
     /// <summary>
     /// Provides validation methods for checking if a Sudoku board follows the rules.

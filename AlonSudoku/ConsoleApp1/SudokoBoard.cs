@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SudokuOmega7
+namespace AlonSudoku
 {
     /// <summary>
     /// Represents a Sudoku board that can store and manipulate the puzzle's state.

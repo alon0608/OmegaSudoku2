@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SudokuOmega7
+namespace AlonSudoku
 {
     /// <summary>
     /// Implements a Sudoku solver that uses backtracking and logical solving strategies

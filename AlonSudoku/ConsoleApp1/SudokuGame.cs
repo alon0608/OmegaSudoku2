@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SudokuOmega7
+namespace AlonSudoku
 {
     /// <summary>
     /// Manages a Sudoku game, including loading the board and validating it,

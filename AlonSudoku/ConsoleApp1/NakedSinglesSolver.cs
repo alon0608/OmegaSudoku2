@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SudokuOmega7
+namespace AlonSudoku
 {
     /// <summary>
     /// Implements the Naked Singles solving technique for Sudoku.

@@ -1,21 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using System;
 
-namespace SudokuOmega7
+namespace AlonSudoku
 {
-
     public class ConsoleInputSource : IInput
     {
         public string GetInput()
         {
-            Console.WriteLine("Enter the Sudoku puzzle as a single line:");
-            string input = Console.ReadLine();
-            input = input.Replace(".", "0");
-            return input;
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("Enter the Sudoku puzzle as a single line:");
+                    string input = Console.ReadLine()?.Replace(".", "0");
+
+                    if (string.IsNullOrWhiteSpace(input))
+                        throw new ArgumentException("Input cannot be empty.");
+
+                    SudokuInputValidation.ValidateInput(input);
+
+                    return input;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
+            }
         }
     }
-
 }
